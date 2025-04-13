@@ -2,30 +2,30 @@
   /* Light Mode Colors */
   --light-bg: #f8f9fa;
   --light-text: #333;
-  --light-accent: #2e7d32;
-  --light-accent-hover: #1b5e20;
+  --light-accent: #51b08f;
+  --light-accent-hover: #56c876;
   --light-card-bg: #ffffff;
   --light-card-border: rgba(0, 0, 0, 0.05);
   --light-card-shadow: rgba(0, 0, 0, 0.05);
-  --light-section-heading: #2e7d32;
+  --light-section-heading: #51b08f;
   --light-input-bg: #ffffff;
   --light-scrollbar-track: #f1f1f1;
   --light-scrollbar-thumb: #c2c2c2;
-  --light-scrollbar-hover: #2e7d32;
+  --light-scrollbar-hover: #51b08f;
   
-  /* Dark Mode Colors */
-  --dark-bg: #000000;
+  /* Dark Mode Colors (Default) */
+  --dark-bg: #121212;
   --dark-text: #e0e0e0;
-  --dark-accent: #4caf50;
-  --dark-accent-hover: #66bb6a;
+  --dark-accent: #56c876;
+  --dark-accent-hover: #51b08f;
   --dark-card-bg: #1e1e1e;
-  --dark-card-border: rgba(255, 255, 255, 0.05);
+  --dark-card-border: rgba(86, 200, 118, 0.1);
   --dark-card-shadow: rgba(0, 0, 0, 0.3);
-  --dark-section-heading: #66bb6a;
+  --dark-section-heading: #56c876;
   --dark-input-bg: #2d2d2d;
   --dark-scrollbar-track: #2d2d2d;
   --dark-scrollbar-thumb: #444444;
-  --dark-scrollbar-hover: #4caf50;
+  --dark-scrollbar-hover: #56c876;
   
   /* Transition Speed */
   --theme-transition: 0.3s ease-in-out;

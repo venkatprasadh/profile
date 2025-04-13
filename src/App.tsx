@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import './styles/ContactCards.css';
 import Navbar from './components/Navbar';
@@ -9,6 +9,7 @@ import ScrollIndicator from './components/ScrollIndicator';
 import AnimatedSection from './components/AnimatedSection';
 import TextReveal from './components/TextReveal';
 import RevealCard from './components/RevealCard';
+import ThemeToggle from './components/ThemeToggle';
 import { motion } from 'framer-motion';
 
 function App() {
@@ -16,6 +17,10 @@ function App() {
     <div className="App">
       <AnimatedBackground />
       <Navbar />
+      <section id="home" className="about-section"></section>
+      <div className="theme-toggle-wrapper">
+        <ThemeToggle />
+      </div>
       <ScrollIndicator />
       <header className="App-header">
         <motion.h1 
