@@ -1,0 +1,141 @@
+/* Experience Section Styling */
+.experience-section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.experience-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.experience-tabs .tab-button {
+  padding: 8px 15px;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.experience-tabs .tab-button.active {
+  background: linear-gradient(135deg, #56c876, #51b08f);
+  color: white;
+  box-shadow: 0 2px 10px rgba(81, 176, 143, 0.25);
+}
+
+.experience-tabs .tab-button:hover:not(.active) {
+  background-color: #f5f5f5;
+  color: #51b08f;
+}
+
+.experience-content {
+  min-height: 300px;
+  padding: 10px;
+}
+
+.job-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.job-card h3 {
+  color: #51b08f;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.job-details {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.job-card ul {
+  padding-left: 1.5rem;
+  margin-top: 15px;
+}
+
+.job-card li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Dark mode compatibility */
+body.dark .experience-section {
+  background: var(--dark-card-bg);
+}
+
+body.dark .experience-tabs .tab-button {
+  color: #aaa;
+}
+
+body.dark .experience-tabs .tab-button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+body.dark .experience-tabs .tab-button:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #4caf50;
+}
+
+body.dark .job-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--dark-text);
+}
+
+body.dark .job-card h3 {
+  color: var(--dark-text);
+}
+
+body.dark .job-details {
+  color: #aaa;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .experience-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    padding-bottom: 5px;
+  }
+  
+  .experience-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .job-card {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-card {
+    padding: 15px;
+  }
+  
+  .job-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .job-details {
+    font-size: 0.85rem;
+  }
+}

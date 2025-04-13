@@ -1,0 +1,27 @@
+.animated-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.gradient-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(86, 200, 118, 0.05), rgba(81, 176, 143, 0.1));
+}
+
+.gradient-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #56c876, #51b08f);
+  filter: blur(50px);
+  opacity: 0.2;
+  width: 300px;
+  height: 300px;
+}
