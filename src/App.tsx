@@ -11,6 +11,7 @@ import TextReveal from './components/TextReveal';
 import RevealCard from './components/RevealCard';
 import ThemeToggle from './components/ThemeToggle';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
                 url: "https://github.com/venkatprasadh",
                 text: "View GitHub Profile"
               }}
+              icon={<FaGithub size={40} />}
             />
             <RevealCard
               title="LinkedIn"
@@ -84,6 +86,7 @@ function App() {
                 url: "https://linkedin.com/in/venkatprasadh",
                 text: "Connect on LinkedIn"
               }}
+              icon={<FaLinkedin size={40} />}
             />
             <RevealCard
               title="Email"
@@ -92,6 +95,7 @@ function App() {
                 url: "mailto:venkatprasadhsudhakar@gmail.com",
                 text: "Send Email"
               }}
+              icon={<FaEnvelope size={40} />}
             />
           </div>
         </section>
