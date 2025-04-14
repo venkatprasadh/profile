@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* Light Mode Colors */
 :root {
-  /* Light Mode Colors */
   --light-bg: #f8f9fa;
   --light-text: #333;
   --light-accent: #51b08f;
@@ -32,6 +34,7 @@
 }
 
 * {
+  font-family: 'Roboto Slab', serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,7 +51,6 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
