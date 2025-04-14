@@ -17,10 +17,8 @@ function App() {
     <div className="App">
       <AnimatedBackground />
       <Navbar />
-      <section id="home" className="about-section"></section>
-      <div className="theme-toggle-wrapper">
-        <ThemeToggle />
-      </div>
+      
+      
       <ScrollIndicator />
       <header className="App-header">
         <motion.h1 
@@ -98,7 +96,9 @@ function App() {
           </div>
         </section>
       </AnimatedSection>
-
+      <div className="theme-toggle-wrapper">
+        <ThemeToggle />
+      </div>
       <footer>
         <p>&copy; {new Date().getFullYear()} | Venkat</p>
       </footer>
