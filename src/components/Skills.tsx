@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { FaPython, FaJava, FaReact, FaNodeJs, FaAws, FaDocker } from 'react-icons/fa';
+import {  SiServerless } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { TbDeviceIpadPin } from "react-icons/tb";
+import { VscAzureDevops } from "react-icons/vsc";
 import '../styles/Skills.css';
 
 // Define skill types
@@ -15,44 +19,31 @@ type SkillCategory = {
 
 const Skills: React.FC = () => {
   // Define all skills by category
-  const skillCategories: SkillCategory[] = [
+  const skillCategories = [
     {
       name: 'Programming Languages',
       skills: [
-        { name: 'Python' },
-        { name: 'Java' },
-        { name: 'C#' }
-      ]
+        { name: 'Python', icon: <FaPython /> },
+        { name: 'Java', icon: <FaJava /> },
+      ],
     },
     {
       name: 'Cloud & IoT',
       skills: [
-        { name: 'AWS' },
-        { name: 'Azure' },
-        { name: 'IoT Core' },
-        { name: 'IoTHub' },
-        { name: 'Serverless' },
-        { name: 'Docker' }
-      ]
+        { name: 'AWS', icon: <FaAws /> },
+        { name: 'Azure', icon: <VscAzureDevops /> },
+        { name: 'IoT Core', icon: <TbDeviceIpadPin /> },
+        { name: 'Serverless', icon: <SiServerless /> },
+        { name: 'Docker', icon: <FaDocker /> },
+      ],
     },
     {
       name: 'Web Development',
       skills: [
-        { name: 'React' },
-        { name: 'Node.js' },
-        { name: 'REST API' }
-      ]
+        { name: 'React', icon: <FaReact /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+      ],
     },
-    {
-      name: 'Tools & Methodologies',
-      skills: [
-        { name: 'Git & GitHub' },
-        { name: 'CI/CD Pipelines' },
-        { name: 'Agile/Scrum' },
-        { name: 'Test Automation' },
-        { name: 'Performance Testing' }
-      ]
-    }
   ];
 
   // State to track the active tab
@@ -76,37 +67,40 @@ const Skills: React.FC = () => {
       </div>
       
       {/* Skills content with animation */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-          className="skills-grid"
-        >
-          {skillCategories[activeTab].skills.map((skill, index) => (
+      <div
+        className="skills-content"
+        style={{
+          backgroundColor: 'var(--background-color)', // Use CSS variable for theme-based background
+          padding: '20px',
+          borderRadius: '10px'
+        }}
+      >
+        {skillCategories.map((category, index) => (
+          activeTab === index && (
             <motion.div
-              key={skill.name}              className="skill-card"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1,
-                transition: { delay: index * 0.1 } 
-              }}
-              whileHover={{ 
-                scale: 1.05,
-                rotateY: 5,
-                rotateX: -5,
-                boxShadow: "0px 10px 25px rgba(81, 176, 143, 0.2)"
-              }}
-              whileTap={{ scale: 0.95 }}
+              key={index}
+              className="skill-category"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              {skill.name}
+                {category.skills.map((skill, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="skill-card"
+                    style={{ padding: '10px', margin: '10px 0' }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                  >
+                    <div className="skill-icon" style={{ marginRight: '10px' }}>{skill.icon}</div>
+                    <div className="skill-name">{skill.name}</div>
+                  </motion.div>
+                ))}
             </motion.div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
+          )
+        ))}
+      </div>
     </section>
   );
 };

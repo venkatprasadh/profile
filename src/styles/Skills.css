@@ -69,21 +69,38 @@
   min-height: 200px;
 }
 
+body.dark .skill-category {
+  background-color: #1d1d1d;
+}
+
 .skill-card {
-  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+  width: calc(33.33% - 20px); /* Ensure 3 items per row */
+  display: inline-block;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
   border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  color: #333;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  height: 100%;
-  min-height: 80px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  
+  border-radius: 12px;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #56c876, #51b08f);
 }
 
 /* Dark mode compatibility (optional) */
@@ -110,6 +127,9 @@ body.dark .skill-card {
   background: linear-gradient(145deg, #1d1d1d, #212121);
   color: var(--dark-text);
   border: 1px solid rgba(255, 255, 255, 0.03);
+}
+body.dark .skill-card:hover {
+  background: linear-gradient(45deg, #56c876, #51b08f);
 }
 
 /* Responsive styles */
